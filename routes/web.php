@@ -23,7 +23,7 @@ Route::get('/', [PostController::class,'index'])
 Route::get('/posts/{id}', [PostController::class,'text'])
   ->name('text.posts')
   ->where('id','[0-9]+');
-//   /posts/の後が{id}でもcreateでもこっちに飛んでしまうからwhereで条件付け
+// /posts/の後が{id}でもcreateでもこっちに飛んでしまうからwhereで条件付け
 
 Route::get('/posts/create', [PostController::class,'create'])
   ->name('create.posts');
@@ -50,6 +50,6 @@ Route::post('/posts/{id}/comments', [CommentController::class,'store'])
   ->name('store.comments')
   ->where('id','[0-9]+');
 
-  Route::delete('/comments/{comment}/destroy', [CommentController::class,'destroy'])
+Route::delete('/comments/{comment}/destroy', [CommentController::class,'destroy'])
   ->name('destroy.comments')
   ->where('comment','[0-9]+');

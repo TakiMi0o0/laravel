@@ -11,7 +11,6 @@
     <div class="containetr">
         {{ $slot }}
     </div>
-
 </body>
 </html>
 

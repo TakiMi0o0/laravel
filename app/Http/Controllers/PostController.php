@@ -67,6 +67,5 @@ class PostController extends Controller
         $posts = $query->orderBy('id','desc')->paginate(5);
 
         return view('posts.search')->with('posts', $posts)->with('keyword', $keyword);
-
     }
 }

@@ -24,15 +24,15 @@
             </form>
         </li>
         @foreach ($post->comments()->latest()->get() as $comment)
-        <li>
-            {{ $comment->body }}
-            <form class="dele" action="{{ route('destroy.comments', $comment->id) }}" method="post">
-                @method('delete')
-                @csrf
+            <li>
+                {{ $comment->body }}
+                <form class="dele" action="{{ route('destroy.comments', $comment->id) }}" method="post">
+                    @method('delete')
+                    @csrf
 
-                <button>×</button>
-            </form>
-        </li>
+                    <button>×</button>
+                </form>
+            </li>
         @endforeach
     </ul>
 </x-layout>
